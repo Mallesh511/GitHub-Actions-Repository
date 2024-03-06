@@ -1,0 +1,14 @@
+# configure aws provider
+provider "aws" {
+  region  = var.region
+}
+
+# configure backend
+terraform {
+  backend "s3" {
+    bucket         = "github-workflow-terraform"
+    key            = "dev/terraform.tfstate"
+    region         = "us-east-1"
+    dynamodb_table = "terraform-state-lock-dynamodb"
+  }
+}
