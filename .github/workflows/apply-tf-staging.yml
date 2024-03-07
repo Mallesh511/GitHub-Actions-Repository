@@ -9,8 +9,8 @@ defaults:
     working-directory: Stack_Definition/stg
   
 env:
-  AWS_ACCESS_KEY_ID: ${{ accesskeyid }}
-  AWS_SECRET_ACCESS_KEY: ${{ secretkeyid }}
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_KEY }}
 
 jobs:
   build:
